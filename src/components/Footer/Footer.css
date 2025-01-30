@@ -1,0 +1,130 @@
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 4rem 0 2rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-info p {
+    color: #888;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    color: #888;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #ff69b4;
+  }
+  
+  .footer-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ff69b4;
+  }
+  
+  .newsletter h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter p {
+    color: #888;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .newsletter-form input:focus {
+    outline: none;
+    border-color: #ff69b4;
+  }
+  
+  .newsletter-form button {
+    padding: 0.8rem 1.5rem;
+    background: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background: #ff1493;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+  }
+  
+  .footer-bottom p {
+    color: #888;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .newsletter-form {
+      flex-direction: column;
+    }
+  }

@@ -1,0 +1,171 @@
+.concerts {
+    padding: 6rem 2rem;
+    background: #252525;
+  }
+  
+  .concerts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .concerts-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .concerts-filter button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .concerts-filter button:hover {
+    background: #444;
+  }
+  
+  .concerts-filter button.active {
+    background: #ff69b4;
+  }
+  
+  .concerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .concert-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: #1a1a1a;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .concert-item:hover {
+    transform: translateX(10px);
+  }
+  
+  .concert-date {
+    min-width: 120px;
+    color: #ff69b4;
+    font-weight: 600;
+  }
+  
+  .concert-info {
+    flex-grow: 1;
+    padding: 0 2rem;
+  }
+  
+  .concert-info h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .concert-info p {
+    color: #888;
+  }
+  
+  .concert-action {
+    min-width: 120px;
+    text-align: right;
+  }
+  
+  .ticket-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .ticket-button:hover {
+    background: #ff1493;
+    transform: translateY(-2px);
+  }
+  
+  .past-show {
+    color: #666;
+    font-style: italic;
+  }
+  
+  .newsletter-signup {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem;
+    background: #1a1a1a;
+    border-radius: 10px;
+  }
+  
+  .newsletter-signup h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-signup p {
+    color: #888;
+    margin-bottom: 2rem;
+  }
+  
+  .signup-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .signup-form input {
+    flex-grow: 1;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: #333;
+    color: #fff;
+  }
+  
+  .signup-form button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: #ff69b4;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .signup-form button:hover {
+    background: #ff1493;
+  }
+  
+  @media (max-width: 768px) {
+    .concerts {
+      padding: 4rem 1rem;
+    }
+  
+    .concert-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .concert-date,
+    .concert-info,
+    .concert-action {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+  
+    .signup-form {
+      flex-direction: column;
+    }
+  }
