@@ -10,6 +10,7 @@ import Shop from './components/Shop/Shop';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import './styles/global.css';
+import { LanguageProvider } from './context/LanguageContext';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
           <Shop />
           <Contact />
           <Footer />
+          <LanguageProvider />
         </>
       )}
     </div>
