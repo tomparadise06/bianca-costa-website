@@ -1,25 +1,92 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Shop.css';
 
-const Shop = () => {
+function Shop() {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const products = [
+    {
+      id: 1,
+      name: "T-Shirt Tour 2024",
+      category: "clothing",
+      price: 35,
+      image: "/assets/shop/tshirt.jpg",
+      sizes: ["S", "M", "L", "XL"]
+    },
+    {
+      id: 2,
+      name: "Album Vinyle",
+      category: "music",
+      price: 25,
+      image: "/assets/shop/vinyl.jpg"
+    },
+    {
+      id: 3,
+      name: "Tote Bag",
+      category: "accessories",
+      price: 20,
+      image: "/assets/shop/totebag.jpg"
+    }
+  ];
+
+  const filteredProducts = selectedCategory === 'all'
+    ? products
+    : products.filter(product => product.category === selectedCategory);
+
   return (
-    <section id="shop" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">Boutique</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {/* Articles */}
-          <div className="shop-item">
-            <img src="/merch-1.jpg" alt="Merch" className="w-full h-auto" />
-            <h3 className="text-xl font-bold mt-4">T-Shirt Tour 2024</h3>
-            <p className="text-lg">29.99 €</p>
-            <button className="mt-4 px-6 py-2 bg-black text-white rounded">
-              Acheter
-            </button>
+    <section id="shop" className="shop">
+      <h2 className="section-title">BOUTIQUE</h2>
+      
+      <div className="shop-categories">
+        <button 
+          className={selectedCategory === 'all' ? 'active' : ''}
+          onClick={() => setSelectedCategory('all')}
+        >
+          TOUT
+        </button>
+        <button 
+          className={selectedCategory === 'clothing' ? 'active' : ''}
+          onClick={() => setSelectedCategory('clothing')}
+        >
+          VÊTEMENTS
+        </button>
+        <button 
+          className={selectedCategory === 'music' ? 'active' : ''}
+          onClick={() => setSelectedCategory('music')}
+        >
+          MUSIQUE
+        </button>
+        <button 
+          className={selectedCategory === 'accessories' ? 'active' : ''}
+          onClick={() => setSelectedCategory('accessories')}
+        >
+          ACCESSOIRES
+        </button>
+      </div>
+
+      <div className="products-grid">
+        {filteredProducts.map(product => (
+          <div key={product.id} className="product-card">
+            <div className="product-image">
+              <img src={product.image} alt={product.name} />
+            </div>
+            <div className="product-info">
+              <h3>{product.name}</h3>
+              <p className="price">{product.price}€</p>
+              {product.sizes && (
+                <div className="size-selector">
+                  {product.sizes.map(size => (
+                    <button key={size}>{size}</button>
+                  ))}
+                </div>
+              )}
+              <button className="add-to-cart">AJOUTER AU PANIER</button>
+            </div>
           </div>
-          {/* Ajoutez d'autres articles ici */}
-        </div>
+        ))}
       </div>
     </section>
   );
-};
+}
 
 export default Shop;

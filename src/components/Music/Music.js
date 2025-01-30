@@ -1,91 +1,53 @@
 import React from 'react';
 import './Music.css';
 
-const Music = () => {
+function Music() {
   const releases = [
     {
       title: "Shinoba",
-      cover: "https://placehold.co/400x400",
-      type: "Single",
       year: "2024",
-      links: {
-        spotify: "#",
-        apple: "#",
-        deezer: "#"
-      }
+      image: "/assets/releases/shinoba.jpg",
+      spotify: "spotify:track:xxxxx"
     },
     {
       title: "Ounana",
-      cover: "https://placehold.co/400x400",
-      type: "Single",
       year: "2023",
-      links: {
-        spotify: "#",
-        apple: "#",
-        deezer: "#"
-      }
-    },
-    {
-      title: "Tropical Vibes",
-      cover: "https://placehold.co/400x400",
-      type: "EP",
-      year: "2023",
-      links: {
-        spotify: "#",
-        apple: "#",
-        deezer: "#"
-      }
+      image: "/assets/releases/ounana.jpg",
+      spotify: "spotify:track:xxxxx"
     }
   ];
 
   return (
-    <section className="music" id="music">
-      <div className="music-container">
-        <h2 className="section-title">Latest Releases</h2>
-        
-        <div className="releases-grid">
-          {releases.map((release, index) => (
-            <div className="release-card" key={index}>
-              <div className="release-image">
-                <img src={release.cover} alt={release.title} />
-                <div className="play-overlay">
-                  <div className="streaming-links">
-                    <a href={release.links.spotify} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-spotify"></i>
-                    </a>
-                    <a href={release.links.apple} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-apple"></i>
-                    </a>
-                    <a href={release.links.deezer} target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-deezer"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="release-info">
-                <h3>{release.title}</h3>
-                <p>{release.type} • {release.year}</p>
+    <section id="music" className="music">
+      <h2 className="section-title">DERNIÈRES SORTIES</h2>
+      <div className="releases-grid">
+        {releases.map((release, index) => (
+          <div key={index} className="release-card">
+            <div className="release-image">
+              <img src={release.image} alt={release.title} />
+              <div className="play-overlay">
+                <i className="fas fa-play"></i>
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="featured-player">
-          <h3>Featured Track</h3>
-          <div className="player-wrapper">
-            <iframe
-              src="https://open.spotify.com/embed/track/your-track-id"
-              width="100%"
-              height="80"
-              frameBorder="0"
-              allowtransparency="true"
-              allow="encrypted-media"
-            ></iframe>
+            <div className="release-info">
+              <h3>{release.title}</h3>
+              <p>{release.year}</p>
+            </div>
           </div>
-        </div>
+        ))}
+      </div>
+      <div className="spotify-player">
+        <iframe 
+          src="https://open.spotify.com/embed/artist/1DcL22xdIWcdNa4ZHaXZjT?utm_source=generator" 
+          width="100%" 
+          height="380" 
+          frameBorder="0" 
+          allowtransparency="true" 
+          allow="encrypted-media"
+        ></iframe>
       </div>
     </section>
   );
-};
+}
 
 export default Music;

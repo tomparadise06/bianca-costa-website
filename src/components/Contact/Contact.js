@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
-const Contact = () => {
+function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  const [status, setStatus] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('sending');
-    // Simuler l'envoi du formulaire
-    setTimeout(() => {
-      setStatus('sent');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    }, 1500);
+    // Handle form submission
+    console.log(formData);
   };
 
   const handleChange = (e) => {
@@ -29,99 +23,75 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact" id="contact">
+    <section id="contact" className="contact">
+      <h2 className="section-title">CONTACT</h2>
+      
       <div className="contact-container">
-        <h2 className="section-title">Contact</h2>
-
-        <div className="contact-wrapper">
-          <form onSubmit={handleSubmit} className="contact-form">
-            <div className="form-grid">
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows="6"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className={status === 'sending' ? 'sending' : ''}
-            >
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
-
-          {status === 'sent' && (
-            <div className="success-message">
-              Message sent successfully!
-            </div>
-          )}
-        </div>
-
         <div className="contact-info">
-          <div className="info-item">
-            <i className="fas fa-envelope"></i>
-            <h3>Email</h3>
-            <p>contact@biancacosta.com</p>
-          </div>
-
-          <div className="info-item">
-            <i className="fas fa-map-marker-alt"></i>
-            <h3>Location</h3>
-            <p>Paris, France</p>
-          </div>
-
-          <div className="info-item">
-            <i className="fas fa-phone"></i>
-            <h3>Management</h3>
-            <p>+33 1 23 45 67 89</p>
+          <h3>MANAGEMENT</h3>
+          <p>contact@biancacosta.com</p>
+          
+          <h3>BOOKING</h3>
+          <p>booking@biancacosta.com</p>
+          
+          <div className="social-links">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-tiktok"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-youtube"></i>
+            </a>
           </div>
         </div>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="NOM"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="EMAIL"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="subject"
+              placeholder="SUJET"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <textarea
+              name="message"
+              placeholder="MESSAGE"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="submit-btn">ENVOYER</button>
+        </form>
       </div>
     </section>
   );
-};
+}
 
 export default Contact;

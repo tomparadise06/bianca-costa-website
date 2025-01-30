@@ -1,21 +1,60 @@
 import React from 'react';
+import './Social.css';
 
-const Social = () => {
+function Social() {
+  const socialLinks = [
+    {
+      platform: 'Instagram',
+      username: '@biancacosta',
+      url: 'https://instagram.com/biancacosta',
+      icon: 'fab fa-instagram'
+    },
+    {
+      platform: 'TikTok',
+      username: '@biancacosta',
+      url: 'https://tiktok.com/@biancacosta',
+      icon: 'fab fa-tiktok'
+    },
+    {
+      platform: 'YouTube',
+      username: 'Bianca Costa',
+      url: 'https://youtube.com/biancacosta',
+      icon: 'fab fa-youtube'
+    },
+    {
+      platform: 'Spotify',
+      username: 'Bianca Costa',
+      url: 'https://open.spotify.com/artist/biancacosta',
+      icon: 'fab fa-spotify'
+    }
+  ];
+
   return (
-    <section id="social" className="py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">Réseaux Sociaux</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Instagram Feed */}
-          <div className="social-card">
-            <h3 className="text-xl font-bold mb-4">Instagram</h3>
-            {/* Intégration Instagram */}
-          </div>
-          {/* Autres réseaux sociaux */}
+    <section id="social" className="social">
+      <h2 className="section-title">SUIVEZ-MOI</h2>
+      <div className="social-grid">
+        {socialLinks.map((social, index) => (
+          <a 
+            key={index}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-card"
+          >
+            <i className={social.icon}></i>
+            <h3>{social.platform}</h3>
+            <p>{social.username}</p>
+          </a>
+        ))}
+      </div>
+      <div className="social-feed">
+        <h3>INSTAGRAM FEED</h3>
+        <div className="instagram-grid">
+          {/* Instagram Feed Integration */}
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Social;

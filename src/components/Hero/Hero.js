@@ -1,65 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Hero.css';
 
-const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      image: "https://placehold.co/1920x1080",
-      title: "BIANCA COSTA",
-      subtitle: "Latest Release: Shinoba",
-      cta: "Listen Now"
-    },
-    {
-      image: "https://placehold.co/1920x1080",
-      title: "World Tour 2024",
-      subtitle: "Get Your Tickets",
-      cta: "Book Now"
-    },
-    {
-      image: "https://placehold.co/1920x1080",
-      title: "New Album",
-      subtitle: "Coming Soon",
-      cta: "Pre-save"
-    }
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
+function Hero() {
   return (
-    <section className="hero" id="home">
-      <div className="hero-slider">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`slide ${index === currentSlide ? 'active' : ''}`}
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="slide-content">
-              <h1>{slide.title}</h1>
-              <p>{slide.subtitle}</p>
-              <button className="cta-button">{slide.cta}</button>
-            </div>
-          </div>
-        ))}
+    <section className="hero">
+      <div className="hero-content">
+        <h1>BIANCA COSTA</h1>
+        <p>WORLD TOUR 2024</p>
+        <div className="hero-buttons">
+          <button className="btn primary">ÉCOUTER</button>
+          <button className="btn secondary">BILLETS</button>
+        </div>
       </div>
-
-      <div className="slider-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => setCurrentSlide(index)}
-          />
-        ))}
+      <div className="hero-scroll">
+        <span>SCROLL</span>
+        <div className="scroll-indicator"></div>
       </div>
     </section>
   );
-};
+}
 
 export default Hero;

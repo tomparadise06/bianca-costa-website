@@ -1,24 +1,50 @@
 import React from 'react';
+import './Tour.css';
 
-const Tour = () => {
+function Tour() {
+  const tourDates = [
+    {
+      date: "15 MAR 2024",
+      venue: "Le Trianon",
+      city: "Paris",
+      country: "France",
+      ticketLink: "#"
+    },
+    {
+      date: "22 MAR 2024",
+      venue: "Casa do Povo",
+      city: "São Paulo",
+      country: "Brasil",
+      ticketLink: "#"
+    }
+  ];
+
   return (
-    <section id="tour" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12">World Tour 2024</h2>
-        <div className="grid gap-6">
-          {/* Dates de tournée */}
-          <div className="tour-date p-6 bg-white shadow-lg rounded-lg">
-            <h3 className="text-xl font-bold">Paris, France</h3>
-            <p className="text-lg">15 Mars 2024 - L'Olympia</p>
-            <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded">
-              Billets
-            </button>
+    <section id="tour" className="tour">
+      <h2 className="section-title">TOUR DATES</h2>
+      <div className="tour-dates">
+        {tourDates.map((show, index) => (
+          <div key={index} className="tour-date">
+            <div className="date-info">
+              <span className="date">{show.date}</span>
+              <span className="venue">{show.venue}</span>
+              <span className="location">{show.city}, {show.country}</span>
+            </div>
+            <a href={show.ticketLink} className="ticket-button">
+              BILLETS
+            </a>
           </div>
-          {/* Ajoutez d'autres dates ici */}
-        </div>
+        ))}
+      </div>
+      <div className="newsletter-signup">
+        <h3>RESTEZ INFORMÉ</h3>
+        <form className="signup-form">
+          <input type="email" placeholder="Votre email" />
+          <button type="submit">S'INSCRIRE</button>
+        </form>
       </div>
     </section>
   );
-};
+}
 
 export default Tour;

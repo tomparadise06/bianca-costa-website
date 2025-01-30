@@ -1,28 +1,40 @@
 import React from 'react';
+import './Videos.css';
 
-const Videos = () => {
+function Videos() {
+  const videos = [
+    {
+      id: 1,
+      title: "Shinoba - Official Video",
+      thumbnail: "/assets/videos/shinoba-thumb.jpg",
+      youtubeId: "XXXXX"
+    },
+    {
+      id: 2,
+      title: "Ounana - Live Performance",
+      thumbnail: "/assets/videos/ounana-thumb.jpg",
+      youtubeId: "XXXXX"
+    }
+  ];
+
   return (
-    <section id="videos" className="py-20 bg-black">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-12 text-white">Vidéos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Vidéo clips */}
-          <div className="video-card">
-            <iframe
-              width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/VIDEOID"
-              title="Tout le quartier"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+    <section id="videos" className="videos">
+      <h2 className="section-title">VIDÉOS</h2>
+      <div className="videos-grid">
+        {videos.map(video => (
+          <div key={video.id} className="video-card">
+            <div className="video-thumbnail">
+              <img src={video.thumbnail} alt={video.title} />
+              <div className="play-button">
+                <i className="fas fa-play"></i>
+              </div>
+            </div>
+            <h3>{video.title}</h3>
           </div>
-          {/* Ajoutez d'autres vidéos ici */}
-        </div>
+        ))}
       </div>
     </section>
   );
-};
+}
 
 export default Videos;
