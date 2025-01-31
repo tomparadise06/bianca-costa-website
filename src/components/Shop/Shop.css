@@ -1,0 +1,24 @@
+.shop-section {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .shop-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 200px;
+  }
+  
+  .shop-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  

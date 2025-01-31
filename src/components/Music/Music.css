@@ -1,133 +1,16 @@
-.music {
-    padding: 6rem 2rem;
-    background: #1a1a1a;
-  }
-  
-  .music-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .section-title {
-    color: #fff;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .releases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-  
-  .release-card {
-    background: #252525;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .release-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .release-image {
-    position: relative;
-    aspect-ratio: 1;
-  }
-  
-  .release-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  .release-card:hover .play-overlay {
-    opacity: 1;
-  }
-  
-  .streaming-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .streaming-links a {
-    color: #fff;
-    font-size: 1.8rem;
-    transition: color 0.3s ease;
-  }
-  
-  .streaming-links a:hover {
-    color: #ff69b4;
-  }
-  
-  .release-info {
-    padding: 1.5rem;
-    color: #fff;
-  }
-  
-  .release-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .release-info p {
-    color: #888;
-    font-size: 0.9rem;
-  }
-  
-  .featured-player {
-    margin-top: 4rem;
-    padding: 2rem;
-    background: #252525;
-    border-radius: 10px;
-  }
-  
-  .featured-player h3 {
-    color: #fff;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-  }
-  
-  .player-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  @media (max-width: 768px) {
-    .music {
-      padding: 4rem 1rem;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .releases-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-  
-    .streaming-links a {
-      font-size: 1.5rem;
-    }
-  }
+.music-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.music-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.spotify-player {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}

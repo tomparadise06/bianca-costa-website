@@ -1,96 +1,67 @@
-import React, { useState } from 'react';
-import './Contact.css';
+import React, { useState } from "react";
+import "./Contact.css";
+import { useLanguage } from "../../context/LanguageContext";
+import { motion } from "framer-motion";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const { t } = useLanguage();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    console.log("Form submitted:", formData);
+    alert("Message envoyé !");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="contact">
-      <h2 className="section-title">CONTACT</h2>
-      
-      <div className="contact-container">
-        <div className="contact-info">
-          <h3>MANAGEMENT</h3>
-          <p>contact@biancacosta.com</p>
-          
-          <h3>BOOKING</h3>
-          <p>booking@biancacosta.com</p>
-          
-          <div className="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-tiktok"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i className="fab fa-youtube"></i>
-            </a>
-          </div>
-        </div>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              name="name"
-              placeholder="NOM"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              placeholder="EMAIL"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              name="subject"
-              placeholder="SUJET"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <textarea
-              name="message"
-              placeholder="MESSAGE"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
-          <button type="submit" className="submit-btn">ENVOYER</button>
-        </form>
-      </div>
-    </section>
+    <motion.section
+      id="contact"
+      className="contact-section container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      <h2>{t.contact.title}</h2>
+      <form onSubmit={handleSubmit} className="contact-form">
+        <label>
+          {t.contact.name}
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          {t.contact.email}
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          {t.contact.message}
+          <textarea
+            name="message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <button type="submit">{t.contact.submit}</button>
+      </form>
+    </motion.section>
   );
 }
 

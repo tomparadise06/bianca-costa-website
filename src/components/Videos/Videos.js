@@ -1,39 +1,31 @@
-import React from 'react';
-import './Videos.css';
+import React from "react";
+import "./Videos.css";
+import { useLanguage } from "../../context/LanguageContext";
+import { motion } from "framer-motion";
 
 function Videos() {
-  const videos = [
-    {
-      id: 1,
-      title: "Shinoba - Official Video",
-      thumbnail: "/assets/videos/shinoba-thumb.jpg",
-      youtubeId: "XXXXX"
-    },
-    {
-      id: 2,
-      title: "Ounana - Live Performance",
-      thumbnail: "/assets/videos/ounana-thumb.jpg",
-      youtubeId: "XXXXX"
-    }
-  ];
-
+  const { t } = useLanguage();
   return (
-    <section id="videos" className="videos">
-      <h2 className="section-title">VIDÉOS</h2>
-      <div className="videos-grid">
-        {videos.map(video => (
-          <div key={video.id} className="video-card">
-            <div className="video-thumbnail">
-              <img src={video.thumbnail} alt={video.title} />
-              <div className="play-button">
-                <i className="fas fa-play"></i>
-              </div>
-            </div>
-            <h3>{video.title}</h3>
-          </div>
-        ))}
+    <motion.section
+      id="videos"
+      className="videos-section container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      <h2>{t.videos.title}</h2>
+      <div className="video-wrapper">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/s5IGIED_HMI"
+          title="YouTube Video"
+          frameBorder="0"
+          allowFullScreen
+        />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

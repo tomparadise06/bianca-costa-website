@@ -1,49 +1,34 @@
-import React from 'react';
-import './Footer.css';
+import React, { useState } from "react";
+import "./Footer.css";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Footer() {
+  const { t } = useLanguage();
+  const [email, setEmail] = useState("");
+
+  const handleNewsletter = (e) => {
+    e.preventDefault();
+    console.log("Newsletter subscription:", email);
+    alert("Merci pour votre inscription !");
+    setEmail("");
+  };
+
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-info">
-          <h3>BIANCA COSTA</h3>
-          <p>© 2024 Tous droits réservés</p>
+    <footer className="footer-container">
+      <form onSubmit={handleNewsletter} className="newsletter-form">
+        <label>{t.footer.newsletter}</label>
+        <div className="newsletter-input">
+          <input
+            type="email"
+            placeholder="Votre email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit">{t.footer.subscribe}</button>
         </div>
-
-        <div className="footer-links">
-          <h4>LIENS RAPIDES</h4>
-          <nav>
-            <a href="#music">Musique</a>
-            <a href="#videos">Vidéos</a>
-            <a href="#tour">Tour</a>
-            <a href="#shop">Shop</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-
-        <div className="footer-newsletter">
-          <h4>NEWSLETTER</h4>
-          <form className="newsletter-form">
-            <input type="email" placeholder="Votre email" />
-            <button type="submit">S'INSCRIRE</button>
-          </form>
-        </div>
-
-        <div className="footer-social">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-tiktok"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-youtube"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-spotify"></i>
-          </a>
-        </div>
-      </div>
+      </form>
+      <p>© 2025 Bianca Costa - All rights reserved.</p>
     </footer>
   );
 }

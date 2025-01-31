@@ -1,0 +1,17 @@
+.social-section {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  

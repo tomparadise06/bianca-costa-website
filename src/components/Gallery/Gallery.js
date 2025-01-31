@@ -1,70 +1,57 @@
-import React, { useState } from 'react';
-import './Gallery.css';
+import React, { useState } from "react";
+import "./Gallery.css";
+import { useLanguage } from "../../context/LanguageContext";
+import { motion } from "framer-motion";
+
+const data = [
+  { id: 1, type: "photo", src: "/bibi.png", alt: "Photo 1" },
+  { id: 2, type: "photo", src: "/bibi3.jpg", alt: "Photo 2" },
+  { id: 3, type: "video", src: "https://www.youtube.com/embed/s5IGIED_HMI", alt: "Video" }
+];
 
 function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [filter, setFilter] = useState('all');
-
-  const images = [
-    { id: 1, category: 'live', src: '/assets/gallery/live1.jpg', alt: 'Live Performance' },
-    { id: 2, category: 'backstage', src: '/assets/gallery/backstage1.jpg', alt: 'Backstage' },
-    { id: 3, category: 'studio', src: '/assets/gallery/studio1.jpg', alt: 'Studio Session' }
-  ];
-
-  const filteredImages = filter === 'all' 
-    ? images 
-    : images.filter(img => img.category === filter);
+  const { t } = useLanguage();
+  const [filter, setFilter] = useState("all");
+  const handleFilter = (type) => {
+    setFilter(type);
+  };
+  const filteredData =
+    filter === "all" ? data : data.filter((item) => item.type === filter);
 
   return (
-    <section id="gallery" className="gallery">
-      <h2 className="section-title">GALERIE</h2>
-      
+    <motion.section
+      id="gallery"
+      className="gallery-section container"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+    >
+      <h2>{t.gallery.title}</h2>
       <div className="gallery-filters">
-        <button 
-          className={filter === 'all' ? 'active' : ''} 
-          onClick={() => setFilter('all')}
-        >
-          TOUT
-        </button>
-        <button 
-          className={filter === 'live' ? 'active' : ''} 
-          onClick={() => setFilter('live')}
-        >
-          LIVE
-        </button>
-        <button 
-          className={filter === 'backstage' ? 'active' : ''} 
-          onClick={() => setFilter('backstage')}
-        >
-          BACKSTAGE
-        </button>
-        <button 
-          className={filter === 'studio' ? 'active' : ''} 
-          onClick={() => setFilter('studio')}
-        >
-          STUDIO
-        </button>
+        <button onClick={() => handleFilter("all")}>{t.gallery.filterAll}</button>
+        <button onClick={() => handleFilter("photo")}>{t.gallery.filterPhotos}</button>
+        <button onClick={() => handleFilter("video")}>{t.gallery.filterVideos}</button>
       </div>
-
       <div className="gallery-grid">
-        {filteredImages.map(image => (
-          <div 
-            key={image.id} 
-            className="gallery-item"
-            onClick={() => setSelectedImage(image)}
-          >
-            <img src={image.src} alt={image.alt} />
-          </div>
-        ))}
+        {filteredData.map((item) =>
+          item.type === "photo" ? (
+            <img key={item.id} src={item.src} alt={item.alt} />
+          ) : (
+            <div key={item.id} className="video-wrapper">
+              <iframe
+                width="100%"
+                height="200"
+                src={item.src}
+                title="Video"
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
+          )
+        )}
       </div>
-
-      {selectedImage && (
-        <div className="lightbox" onClick={() => setSelectedImage(null)}>
-          <img src={selectedImage.src} alt={selectedImage.alt} />
-          <button className="close-lightbox">&times;</button>
-        </div>
-      )}
-    </section>
+    </motion.section>
   );
 }
 
