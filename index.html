@@ -1,75 +1,226 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site officiel de Bianca Costa, artiste Bossa Trap. Réservez vos billets et découvrez sa boutique en ligne.">
-    <meta name="keywords" content="Bianca Costa, Bossa Trap, concerts, billetterie, boutique">
-    <meta name="author" content="Bianca Costa">
-    <title>Bianca Costa | Bossa Trap Queen</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bianca Costa - Bossa Trap</title>
+  <meta name="description" content="Site officiel de Bianca Costa, artiste Bossa Trap. Découvrez sa musique, sa discographie, ses clips, réservez ses concerts et accédez à sa boutique officielle.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Bianca Costa</h1>
-        <p>Fusion entre Bossa Nova et Trap</p>
-        <a href="#billetterie" class="btn">Réservez vos billets</a>
-    </header>
+  <!-- Page d'accueil immersive -->
+  <header id="home">
+    <video autoplay muted loop id="background-video">
+      <source src="assets/video/bg-video.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+    <div class="overlay">
+      <h1>Bianca Costa</h1>
+      <p>Fusion unique de Bossa Nova et Trap pour une expérience immersive.</p>
+      <div class="cta-buttons">
+        <a href="#discographie" class="btn">Écouter maintenant</a>
+        <a href="#billetterie" class="btn">Réserver un concert</a>
+        <a href="#boutique" class="btn">Visiter la boutique</a>
+      </div>
+    </div>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="#biographie">Biographie</a></li>
-            <li><a href="#billetterie">Billetterie</a></li>
-            <li><a href="#boutique">Boutique</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- Biographie -->
+  <section id="biographie">
+    <h2>Biographie</h2>
+    <div class="bio-content">
+      <div class="bio-text">
+        <p>
+          Bianca Costa est une artiste pluriculturelle née au Brésil et ayant grandi entre le Portugal et la France. Dès son plus jeune âge, elle a été bercée par des rythmes exotiques et des mélodies envoûtantes qui, au fil des années, ont forgé un style unique alliant la douceur de la Bossa Nova et l’énergie percutante du Trap.
+        </p>
+        <p>
+          Inspirée par la vie urbaine et les traditions ancestrales, Bianca repousse sans cesse les limites de l’innovation artistique. Ses collaborations prestigieuses et ses performances live spectaculaires ont rapidement conquis un public international, faisant d’elle une figure incontournable de la scène musicale moderne.
+        </p>
+        <p>
+          Aujourd’hui, Bianca Costa invite son public à vivre un voyage sensoriel inédit, où la musique se transforme en une expérience immersive mêlant émotion, modernité et authenticité.
+        </p>
+      </div>
+      <div class="bio-images">
+        <img src="assets/images/biografia1.jpg" alt="Bianca Costa en performance">
+        <img src="assets/images/biografia2.jpg" alt="Portrait de Bianca Costa">
+      </div>
+    </div>
+  </section>
 
-    <section id="billetterie" class="section">
-        <h2>Billetterie</h2>
-        <div class="grid">
-            <div class="concert">
-                <img src="https://placehold.co/400x300" alt="Concert Paris">
-                <h3>Paris, Le Trianon</h3>
-                <p>15 Mars 2025</p>
-                <a href="https://www.ticketmaster.fr" class="btn" target="_blank">Réserver</a>
-            </div>
-            <div class="concert">
-                <img src="https://placehold.co/400x300" alt="Concert Lyon">
-                <h3>Lyon, Le Sucre</h3>
-                <p>20 Avril 2025</p>
-                <a href="https://www.ticketmaster.fr" class="btn" target="_blank">Réserver</a>
-            </div>
+  <!-- Discographie -->
+  <section id="discographie">
+    <h2>Discographie</h2>
+    <div class="albums">
+      <!-- Album 1 -->
+      <div class="album">
+        <img src="assets/images/album1.jpg" alt="Échos de la Rive">
+        <h3>Échos de la Rive</h3>
+        <audio controls>
+          <source src="assets/audio/extrait1.mp3" type="audio/mpeg">
+          Ton navigateur ne supporte pas l'audio.
+        </audio>
+        <div class="platform-buttons">
+          <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
+          <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
+          <a href="https://www.deezer.com" target="_blank" class="btn">Deezer</a>
         </div>
-    </section>
-
-    <section id="boutique" class="section">
-        <h2>Boutique</h2>
-        <div class="grid">
-            <div class="product">
-                <img src="https://placehold.co/400x300" alt="T-shirt Bianca Costa">
-                <h3>T-shirt Officiel</h3>
-                <p>Prix : 25€</p>
-                <a href="#" class="btn">Acheter</a>
-            </div>
-            <div class="product">
-                <img src="https://placehold.co/400x300" alt="Vinyle Bianca Costa">
-                <h3>Vinyle "Le Baile"</h3>
-                <p>Prix : 30€</p>
-                <a href="#" class="btn">Acheter</a>
-            </div>
+      </div>
+      <!-- Album 2 -->
+      <div class="album">
+        <img src="assets/images/album2.jpg" alt="Rythmes d'Azur">
+        <h3>Rythmes d'Azur</h3>
+        <audio controls>
+          <source src="assets/audio/extrait2.mp3" type="audio/mpeg">
+          Ton navigateur ne supporte pas l'audio.
+        </audio>
+        <div class="platform-buttons">
+          <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
+          <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
+          <a href="https://www.deezer.com" target="_blank" class="btn">Deezer</a>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Bianca Costa. Tous droits réservés.</p>
-        <div class="socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-spotify"></i></a>
+      </div>
+      <!-- Album 3 -->
+      <div class="album">
+        <img src="assets/images/album3.jpg" alt="Vagues Urbaines">
+        <h3>Vagues Urbaines</h3>
+        <audio controls>
+          <source src="assets/audio/extrait3.mp3" type="audio/mpeg">
+          Ton navigateur ne supporte pas l'audio.
+        </audio>
+        <div class="platform-buttons">
+          <a href="https://open.spotify.com" target="_blank" class="btn">Spotify</a>
+          <a href="https://music.apple.com" target="_blank" class="btn">Apple Music</a>
+          <a href="https://www.deezer.com" target="_blank" class="btn">Deezer</a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clips vidéo -->
+  <section id="clips">
+    <h2>Clips vidéo</h2>
+    <div class="video-grid">
+      <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EXEMPLE_VIDEO1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EXEMPLE_VIDEO2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video-item">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EXEMPLE_VIDEO3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Billetterie -->
+  <section id="billetterie">
+    <h2>Billetterie</h2>
+    <div class="concerts">
+      <!-- Concert 1 -->
+      <div class="concert">
+        <h3>Concert à Paris</h3>
+        <p>Date : 25/03/2025</p>
+        <p>Lieu : La Cigale, Paris</p>
+        <a href="https://www.ticketmaster.fr" target="_blank" class="btn">Réserver</a>
+        <div class="map" data-lat="48.8718" data-lng="2.3400"></div>
+      </div>
+      <!-- Concert 2 -->
+      <div class="concert">
+        <h3>Concert à Lisbonne</h3>
+        <p>Date : 10/05/2025</p>
+        <p>Lieu : Altice Arena, Lisbonne</p>
+        <a href="https://www.ticketmaster.pt" target="_blank" class="btn">Réserver</a>
+        <div class="map" data-lat="38.7369" data-lng="-9.1427"></div>
+      </div>
+      <!-- Concert 3 -->
+      <div class="concert">
+        <h3>Concert à Rio de Janeiro</h3>
+        <p>Date : 15/07/2025</p>
+        <p>Lieu : Maracanã, Rio de Janeiro</p>
+        <a href="https://www.ticketmaster.com.br" target="_blank" class="btn">Réserver</a>
+        <div class="map" data-lat="-22.9122" data-lng="-43.2302"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boutique en ligne -->
+  <section id="boutique">
+    <h2>Boutique</h2>
+    <div class="products">
+      <!-- Produit 1 -->
+      <div class="product">
+        <img src="assets/images/tshirt.jpg" alt="T-shirt Officiel">
+        <h3>T-shirt Officiel</h3>
+        <p>Prix : 25€</p>
+        <button class="btn add-to-cart" data-product="T-shirt Officiel" data-price="25">Ajouter au panier</button>
+      </div>
+      <!-- Produit 2 -->
+      <div class="product">
+        <img src="assets/images/vinyle.jpg" alt="Vinyle Collector">
+        <h3>Vinyle Collector</h3>
+        <p>Prix : 40€</p>
+        <button class="btn add-to-cart" data-product="Vinyle Collector" data-price="40">Ajouter au panier</button>
+      </div>
+      <!-- Produit 3 -->
+      <div class="product">
+        <img src="assets/images/poster.jpg" alt="Poster Exclusif">
+        <h3>Poster Exclusif</h3>
+        <p>Prix : 15€</p>
+        <button class="btn add-to-cart" data-product="Poster Exclusif" data-price="15">Ajouter au panier</button>
+      </div>
+      <!-- Produit 4 -->
+      <div class="product">
+        <img src="assets/images/casquette.jpg" alt="Casquette Bianca">
+        <h3>Casquette Bianca</h3>
+        <p>Prix : 20€</p>
+        <button class="btn add-to-cart" data-product="Casquette Bianca" data-price="20">Ajouter au panier</button>
+      </div>
+    </div>
+    <div class="cart">
+      <h3>Panier</h3>
+      <ul id="cart-items"></ul>
+      <p>Total : <span id="cart-total">0€</span></p>
+      <button class="btn" id="checkout">Payer</button>
+    </div>
+  </section>
+
+  <!-- Galerie photo -->
+  <section id="galerie">
+    <h2>Galerie Photo</h2>
+    <div class="photo-gallery">
+      <img src="assets/images/photo1.jpg" alt="Photo live 1">
+      <img src="assets/images/photo2.jpg" alt="Photo live 2">
+      <img src="assets/images/photo3.jpg" alt="Photo backstage">
+      <img src="assets/images/photo4.jpg" alt="Photo de tournée">
+      <img src="assets/images/photo5.jpg" alt="Portrait artistique">
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form" action="send_mail.php" method="POST">
+      <input type="text" name="nom" placeholder="Nom" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Réseaux sociaux -->
+  <footer id="social">
+    <h2>Suivez Bianca Costa</h2>
+    <div class="social-icons">
+      <a href="https://instagram.com/biancacosta" target="_blank"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+      <a href="https://youtube.com/biancacosta" target="_blank"><img src="assets/icons/youtube.png" alt="YouTube"></a>
+      <a href="https://spotify.com/artist/biancacosta" target="_blank"><img src="assets/icons/spotify.png" alt="Spotify"></a>
+      <a href="https://tiktok.com/@biancacosta" target="_blank"><img src="assets/icons/tiktok.png" alt="TikTok"></a>
+    </div>
+    <p>&copy; 2025 Bianca Costa. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Pour activer Google Maps, décommente la ligne suivante et ajoute ta clé API -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API&callback=initMaps" async defer></script> -->
 </body>
 </html>
